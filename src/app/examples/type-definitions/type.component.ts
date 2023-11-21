@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { options, fullpage_api } from 'fullpage.js/dist/fullpage.extensions.min';
+import { fullpageOptions, fullpageApi } from 'fullpage.js/dist/fullpage.extensions.min';
 
 @Component({
   selector: 'app-type',
@@ -7,8 +7,8 @@ import { options, fullpage_api } from 'fullpage.js/dist/fullpage.extensions.min'
   styleUrls: ['./type.component.scss']
 })
 export class TypeExampleComponent implements OnInit {
-  config: options;
-  fullpage_api!: fullpage_api;
+  config: fullpageOptions;
+  fullpageApi!: fullpageApi;
 
   constructor() {
 
@@ -19,18 +19,20 @@ export class TypeExampleComponent implements OnInit {
       menu: '#menu',
       scrollOverflow: true,
       sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-
+      credits: {
+        enabled: false,
+      },
       // events callback
-      afterLoad: (origin, destination, direction) => {
+      afterLoad: (origin: any, destination: any, direction: any) => {
         console.log(destination);
       },
       afterRender: () => {
         console.log('afterRender');
       },
-      afterResize: (width, height) => {
+      afterResize: (width: number, height: number) => {
         console.log('afterResize' + width + ' ' + height);
       },
-      afterSlideLoad: (section, origin, destination, direction) => {
+      afterSlideLoad: (section: any, origin: any, destination: any, direction: any) => {
         console.log(destination);
       }
     };
@@ -40,7 +42,7 @@ export class TypeExampleComponent implements OnInit {
   }
 
   getRef(fullPageRef: any) {
-    this.fullpage_api = fullPageRef;
+    this.fullpageApi = fullPageRef;
   }
 
 }

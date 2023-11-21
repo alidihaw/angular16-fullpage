@@ -7,7 +7,7 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ScrollOverflowExampleComponent implements OnInit {
   config;
-  fullpage_api: any;
+  fullpageApi: any;
 
   constructor() {
 
@@ -39,6 +39,6 @@ export class ScrollOverflowExampleComponent implements OnInit {
   }
 
   getRef(fullPageRef: any) {
-    this.fullpage_api = fullPageRef;
+    this.fullpageApi = fullPageRef;
   }
 }
